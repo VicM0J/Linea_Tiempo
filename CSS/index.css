@@ -1,0 +1,77 @@
+/* Estilos para la página de introducción */
+body {
+  font-family: Arial, sans-serif;
+  background: #fdf6e3;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #333;
+}
+
+header {
+  background: #ff8c94;
+  padding: 20px;
+  color: #fff;
+  font-size: 24px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.intro {
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 600px;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.intro p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff6f61;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #ff8c94;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .intro {
+      margin: 20px 10px;
+      padding: 15px;
+  }
+
+  .intro p {
+      font-size: 16px;
+  }
+
+  .btn {
+      padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+      font-size: 20px;
+  }
+
+  .btn {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}

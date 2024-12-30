@@ -1,0 +1,66 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fdf6e3;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background: #ff8c94;
+    padding: 20px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Sección de la historia */
+.story h2 {
+    color: #ff6f61;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.story p {
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Botón para volver */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #ff6f61;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: #ff8c94;
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff8c94;
+    color: #fff;
+    font-size: 14px;
+}
