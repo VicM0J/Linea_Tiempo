@@ -33,6 +33,9 @@ function validatePassword() {
             title: 'Esa No Es La Frase Mi Amor',
             text: 'Intenta nuevamente.',
             confirmButtonText: 'Pos Ya Que',
+            customClass: {
+                popup: 'swal-responsive'
+            }
         });
     }
 }

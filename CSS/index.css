@@ -1,77 +1,193 @@
+
 /* Estilos para la página de introducción */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #fdf6e3;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #fdf6e3 0%, #f4e8d8 100%);
   margin: 0;
   padding: 0;
   text-align: center;
   color: #333;
+  min-height: 100vh;
+  line-height: 1.6;
 }
 
 header {
-  background: #ff8c94;
-  padding: 20px;
+  background: linear-gradient(135deg, #ff8c94 0%, #ff6f61 100%);
+  padding: clamp(15px, 4vw, 25px);
   color: #fff;
-  font-size: 24px;
+  font-size: clamp(18px, 5vw, 28px);
+  box-shadow: 0 4px 15px rgba(255, 111, 97, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
 h1 {
   margin: 0;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
 }
 
 .intro {
-  padding: 20px;
-  margin: 50px auto;
-  max-width: 600px;
+  padding: clamp(20px, 5vw, 30px);
+  margin: clamp(20px, 8vw, 60px) auto;
+  max-width: min(90vw, 700px);
   text-align: center;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .intro p {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: clamp(14px, 4vw, 18px);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #555;
 }
 
 .btn {
   display: inline-block;
   margin-top: 20px;
-  padding: 10px 20px;
-  background: #ff6f61;
+  padding: clamp(10px, 3vw, 15px) clamp(20px, 5vw, 30px);
+  background: linear-gradient(135deg, #ff6f61 0%, #ff8c94 100%);
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-size: clamp(14px, 3.5vw, 16px);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(255, 111, 97, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn:hover {
-  background: #ff8c94;
+  background: linear-gradient(135deg, #ff8c94 0%, #ffa8a8 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 111, 97, 0.6);
 }
 
-/* Responsivo */
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 111, 97, 0.4);
+}
+
+/* Modal responsivo para contraseñas */
+.swal-responsive {
+  font-size: clamp(14px, 3vw, 16px) !important;
+  width: min(90vw, 400px) !important;
+}
+
+/* Responsivo mejorado */
 @media (max-width: 768px) {
   .intro {
-      margin: 20px 10px;
-      padding: 15px;
+    margin: 20px 15px;
+    padding: 20px;
+    border-radius: 15px;
   }
 
   .intro p {
-      font-size: 16px;
+    font-size: 16px;
+    line-height: 1.6;
   }
 
   .btn {
-      padding: 10px;
+    padding: 12px 25px;
+    font-size: 14px;
+    border-radius: 25px;
   }
 }
 
 @media (max-width: 480px) {
   header {
-      font-size: 20px;
+    padding: 15px 10px;
+    font-size: 20px;
+  }
+
+  .intro {
+    margin: 15px 10px;
+    padding: 15px;
   }
 
   .btn {
-      font-size: 14px;
-      padding: 8px 16px;
+    font-size: 13px;
+    padding: 10px 20px;
+    letter-spacing: 0.5px;
   }
+}
+
+@media (max-width: 320px) {
+  .intro p {
+    font-size: 14px;
+  }
+  
+  .btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro {
+  animation: fadeInUp 0.8s ease-out;
 }
